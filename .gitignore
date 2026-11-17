@@ -1,0 +1,10 @@
+# Local IDE and editor configurations
+.vscode/
+
+# Local backup directory
+Portfolio_old/
+
+# Temporary test renders and files
+*.tmp
+test-*.png
+render_*.png
