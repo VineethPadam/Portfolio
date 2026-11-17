@@ -983,15 +983,24 @@
       padding: 35px;
       box-shadow: var(--shadow-md);
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
       gap: 40px;
       align-items: center;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .project-viewer {
       display: flex;
       flex-direction: column;
       gap: 14px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
 
     .project-browser-card {
@@ -1002,21 +1011,31 @@
       background: #ffffff;
       display: flex;
       flex-direction: column;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
 
     .project-browser-bar {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
+      gap: 8px;
+      padding: 8px 12px;
       background: var(--bg-slate-100);
       border-bottom: 1px solid var(--card-border);
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .browser-dots {
       display: flex;
       align-items: center;
       gap: 5px;
+      flex-shrink: 0;
     }
 
     .b-dot {
@@ -1030,6 +1049,7 @@
 
     .browser-url-pill {
       flex: 1;
+      min-width: 0;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -1040,21 +1060,42 @@
       font-size: 0.74rem;
       color: var(--primary);
       font-weight: 600;
-      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .browser-url-pill svg {
+      flex-shrink: 0;
+    }
+
+    .browser-url-pill span {
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
+      min-width: 0;
+      display: inline-block;
+    }
+
+    .browser-badge {
+      flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .project-main-display {
       position: relative;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
       height: 380px;
       background: #f8fafc;
       cursor: pointer;
+      cursor: zoom-in;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 12px;
       overflow: hidden;
+      box-sizing: border-box;
     }
 
     .project-main-display img {
@@ -1102,8 +1143,8 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       background: rgba(255, 255, 255, 0.95);
       border: 1px solid var(--card-border);
@@ -1126,18 +1167,23 @@
       box-shadow: var(--shadow-md);
     }
 
-    .project-nav-arrow.prev { left: 12px; }
-    .project-nav-arrow.next { right: 12px; }
+    .project-nav-arrow.prev { left: 10px; }
+    .project-nav-arrow.next { right: 10px; }
 
     .project-view-indicator-bar {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 14px;
+      padding: 8px 12px;
       background: var(--bg-slate-50);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-sm);
       font-size: 0.82rem;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .project-view-badge {
@@ -1149,6 +1195,7 @@
       background: var(--primary-light);
       color: var(--primary);
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .project-view-title {
@@ -1157,12 +1204,19 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      min-width: 0;
+      flex: 1;
+      font-size: 0.78rem;
     }
 
     .project-thumbs-bar {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 6px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
 
     .project-thumb-btn {
@@ -1174,6 +1228,9 @@
       aspect-ratio: 16/10;
       background: #ffffff;
       padding: 0;
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
 
     .project-thumb-btn.active {
@@ -1194,21 +1251,28 @@
 
     .project-highlights-strip {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
       margin-top: 4px;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
     }
 
     .project-hl-item {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 12px;
+      padding: 8px 10px;
       background: var(--bg-slate-50);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-sm);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--text-muted);
+      min-width: 0;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .project-hl-item svg {
@@ -1218,6 +1282,13 @@
 
     .project-hl-item strong {
       color: var(--text-dark);
+    }
+
+    .project-hl-item span {
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     .project-details h3 {
@@ -2181,6 +2252,7 @@
 
     .lightbox-box {
       position: relative;
+      width: 92%;
       max-width: 900px;
       max-height: 90vh;
       background: #ffffff;
@@ -2190,6 +2262,7 @@
       display: flex;
       flex-direction: column;
       animation: zoomIn 0.25s ease;
+      margin: auto;
     }
 
     @keyframes zoomIn {
@@ -2373,7 +2446,9 @@
         border-right: none;
       }
       .project-card-featured {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 28px;
       }
       .about-card-clean {
         grid-template-columns: 1fr;
@@ -2382,7 +2457,7 @@
         height: 320px;
       }
       .workshop-card-clean {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .coding-grid {
         grid-template-columns: 1fr;
@@ -2426,9 +2501,25 @@
         height: 280px;
       }
       .project-main-display {
-        height: 250px;
+        height: auto;
+        aspect-ratio: 16/11;
         padding: 6px;
+        width: 100%;
+        max-width: 100%;
       }
+      .project-main-display img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+      .project-nav-arrow {
+        width: 32px;
+        height: 32px;
+      }
+      .project-nav-arrow.prev { left: 6px; }
+      .project-nav-arrow.next { right: 6px; }
 
       .nav-links {
         position: fixed;
@@ -2491,6 +2582,15 @@
       }
     }
 
+    @media (max-width: 600px) {
+      .browser-badge {
+        display: none !important;
+      }
+      .project-highlights-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 480px) {
       .hero-text-content h1 {
         font-size: 2.2rem;
@@ -2523,10 +2623,17 @@
         padding: 0 16px;
       }
       .clean-card,
-      .project-card-featured,
       .about-card-clean,
       .workshop-card-clean {
-        padding: 22px;
+        padding: 20px;
+      }
+      .project-card-featured {
+        padding: 12px;
+        border-radius: var(--radius-md);
+      }
+      .project-main-display {
+        aspect-ratio: 16/11;
+        padding: 4px;
       }
       .cert-dual-preview-frame {
         height: 180px;
@@ -2922,7 +3029,7 @@
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                 <span>http://122.185.86.92:8080/</span>
               </div>
-              <span class="badge badge-amber" style="font-size: 0.68rem; padding: 2px 7px;">
+              <span class="badge badge-amber browser-badge" style="font-size: 0.68rem; padding: 2px 7px;">
                 &copy; SW-2026024092
               </span>
             </div>
