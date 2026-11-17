@@ -559,6 +559,10 @@
     }
 
     /* Clean Hero Visual Profile Showcase (No badges covering photo, rich info card below) */
+    .hero-photo-mobile-wrap {
+      display: none;
+    }
+
     .hero-visual-card {
       display: flex;
       flex-direction: column;
@@ -1519,7 +1523,13 @@
       margin-top: 12px;
     }
 
-    /* ================= WORKSHOP ================= */
+    /* ================= TECHNICAL ENGAGEMENTS & WORKSHOPS ================= */
+    .engagements-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
     .workshop-card-clean {
       background: #ffffff;
       border: 1px solid var(--card-border);
@@ -1530,6 +1540,30 @@
       grid-template-columns: 1.15fr 0.85fr;
       gap: 40px;
       align-items: center;
+    }
+
+    .seminar-visual-box {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-sm);
+      height: 380px;
+      background: var(--bg-slate-50);
+      cursor: pointer;
+    }
+
+    .seminar-visual-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .seminar-visual-box:hover img {
+      transform: scale(1.02);
     }
 
     .workshop-content h3 {
@@ -2306,6 +2340,39 @@
     }
 
     @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero-desktop-only {
+        display: none !important;
+      }
+      .hero-photo-mobile-wrap {
+        display: flex;
+        justify-content: center;
+        margin: 16px auto 20px auto;
+        width: 100%;
+      }
+      .hero-photo-mobile-wrap .hero-photo-clean-box {
+        width: 230px;
+        height: 275px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12);
+        border-radius: var(--radius-lg);
+        padding: 6px;
+        background: #ffffff;
+        border: 1px solid var(--card-border);
+      }
+      .hero-photo-mobile-wrap .hero-photo-clean-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: calc(var(--radius-lg) - 4px);
+      }
+      .seminar-visual-box {
+        height: 280px;
+      }
+
       .nav-links {
         position: fixed;
         top: 0;
@@ -2371,6 +2438,10 @@
       .hero-text-content h1 {
         font-size: 2.2rem;
       }
+      .hero-photo-mobile-wrap .hero-photo-clean-box {
+        width: 200px;
+        height: 245px;
+      }
       .hero-profile-container {
         max-width: 100%;
       }
@@ -2423,7 +2494,7 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#workshops">Workshop</a></li>
+        <li><a href="#workshops">Engagements</a></li>
         <li><a href="#coding-stats">Stats</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
@@ -2454,6 +2525,13 @@
 
         <div class="hero-title-role">
           Java Full-Stack Developer
+        </div>
+
+        <!-- Mobile Photo Frame (Immediately visible on mobile without scrolling!) -->
+        <div class="hero-photo-mobile-wrap">
+          <div class="hero-photo-clean-box">
+            <img src="vineeth-photo.png" alt="Padam Venkata Vineeth Sai" />
+          </div>
         </div>
 
         <p class="hero-desc">
@@ -2521,7 +2599,7 @@
       </div>
 
       <!-- Clean Hero Visual Profile Showcase (No badges covering photo, rich info card below) -->
-      <div class="hero-visual-card">
+      <div class="hero-visual-card hero-desktop-only">
         <div class="hero-profile-container">
           <div class="hero-photo-clean-box">
             <img src="vineeth-photo.png" alt="Padam Venkata Vineeth Sai" />
@@ -2579,8 +2657,8 @@
           <span class="stat-card-label">B.Tech CGPA (MITS)</span>
         </div>
         <div class="stat-card-item">
-          <span class="stat-card-num">10-Wk</span>
-          <span class="stat-card-label">Java Workshop Led (100+ Cohort)</span>
+          <span class="stat-card-num">10-Day</span>
+          <span class="stat-card-label">Java Workshop Led (Lab Mentorship)</span>
         </div>
       </div>
     </div>
@@ -3182,71 +3260,129 @@
     </div>
   </section>
 
-  <!-- ================= WORKSHOPS ================= -->
+  <!-- ================= TECHNICAL ENGAGEMENTS & WORKSHOPS ================= -->
   <section class="section" id="workshops">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Teaching & Mentorship</span>
-        <h2 class="section-title">Workshops Conducted</h2>
-        <p class="section-subtitle">Mentoring junior engineering cohorts through hands-on Java and OOPs training.</p>
+        <span class="section-tag">Leadership & Knowledge Sharing</span>
+        <h2 class="section-title">Technical Engagements & Workshops</h2>
+        <p class="section-subtitle">Delivering technical presentations and conducting hands-on engineering training at MITS.</p>
       </div>
 
-      <div class="workshop-card-clean">
-        <div class="workshop-content">
-          <span class="badge badge-primary">Student Instructor</span>
-          <h3>10-Week Workshop on Core Java</h3>
-          <div class="workshop-sub">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            Madanapalle Institute of Technology and Science (MITS)
+      <div class="engagements-wrapper">
+
+        <!-- 1. Technical Presentation & Knowledge-Sharing Session -->
+        <div class="workshop-card-clean">
+          <div class="workshop-content">
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+              <span class="badge badge-primary">Technical Presentation</span>
+              <span class="badge badge-success">MITS Seminar Hall</span>
+            </div>
+            <h3>Technical Presentation & Knowledge Sharing</h3>
+            <div class="workshop-sub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              College Seminar Hall &bull; Visiting Polytechnic Students
+            </div>
+            <p class="workshop-desc">
+              Delivered a technical presentation and knowledge-sharing session for visiting Polytechnic students at the college seminar hall, promoting technical awareness and interactive learning.
+            </p>
+
+            <div class="workshop-topics-grid">
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Polytechnic Student Outreach
+              </div>
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Technical Awareness & Foundations
+              </div>
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Interactive Q&A Session
+              </div>
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Software Engineering Pathways
+              </div>
+            </div>
+
+            <button class="btn btn-outline" onclick="openLightbox('seminar-presentation.jpg', 'Technical Presentation at College Seminar Hall', 'Delivered a technical presentation and knowledge-sharing session for visiting Polytechnic students at the college seminar hall, promoting technical awareness and interactive learning.')">
+              View Presentation Photo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </button>
           </div>
-          <p class="workshop-desc">
-            Organized and conducted an intensive 10-week hands-on training workshop on Core Java and Object-Oriented Programming (OOPs) for a cohort of 100+ junior engineering students. Mentored students through algorithmic thinking, debugging sessions, and practical coding exercises in the MITS computer lab.
-          </p>
 
-          <div class="workshop-topics-grid">
-            <div class="workshop-topic-tag">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              OOPs: Polymorphism & Inheritance
+          <div class="seminar-visual-box" onclick="openLightbox('seminar-presentation.jpg', 'Technical Presentation at College Seminar Hall', 'Delivered a technical presentation and knowledge-sharing session for visiting Polytechnic students at the college seminar hall, promoting technical awareness and interactive learning.')" title="Click to view full image">
+            <img src="seminar-presentation.jpg" alt="Technical Presentation at MITS Seminar Hall" />
+            <div class="project-zoom-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Click to Enlarge
             </div>
-            <div class="workshop-topic-tag">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              JVM Architecture & ClassLoaders
-            </div>
-            <div class="workshop-topic-tag">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Java Collections Framework
-            </div>
-            <div class="workshop-topic-tag">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Exception Handling Blocks
-            </div>
-            <div class="workshop-topic-tag">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              Arrays & Heap Memory Models
-            </div>
-            <div class="workshop-topic-tag">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              100+ Student Cohort Mentored
-            </div>
-          </div>
-
-          <a href="#gallery" class="btn btn-outline">
-            View Workshop Photos
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-        </div>
-
-        <div class="workshop-slider-box" id="w-slider">
-          <img src="workshop-1.jpg" alt="Teaching Java Arrays in Lab" class="active" />
-          <img src="workshop-2.jpg" alt="Presenting Java bytecode at Seminar Podium" />
-          <img src="workshop-3.jpg" alt="Explaining OOP code on Projector" />
-
-          <div class="workshop-dots-row">
-            <button class="workshop-dot active" onclick="setWorkshopSlide(0)" aria-label="Slide 1"></button>
-            <button class="workshop-dot" onclick="setWorkshopSlide(1)" aria-label="Slide 2"></button>
-            <button class="workshop-dot" onclick="setWorkshopSlide(2)" aria-label="Slide 3"></button>
           </div>
         </div>
+
+        <!-- 2. 10-Day Hands-on Workshop on Core Java -->
+        <div class="workshop-card-clean">
+          <div class="workshop-content">
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+              <span class="badge badge-primary">Student Instructor</span>
+              <span class="badge badge-success">MITS Computer Lab</span>
+            </div>
+            <h3>10-Day Hands-on Workshop on Core Java</h3>
+            <div class="workshop-sub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              Madanapalle Institute of Technology and Science (MITS)
+            </div>
+            <p class="workshop-desc">
+              Organized and conducted an intensive 10-day hands-on training workshop on Core Java and Object-Oriented Programming (OOPs) for junior engineering students. Mentored students through algorithmic thinking, debugging sessions, and practical coding exercises in the MITS computer lab.
+            </p>
+
+            <div class="workshop-topics-grid">
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                OOPs: Polymorphism & Inheritance
+              </div>
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                JVM Architecture & ClassLoaders
+              </div>
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Java Collections Framework
+              </div>
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Exception Handling Blocks
+              </div>
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Arrays & Heap Memory Models
+              </div>
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Junior Cohort Mentored
+              </div>
+            </div>
+
+            <a href="#gallery" class="btn btn-outline">
+              View Lab Photos
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+
+          <div class="workshop-slider-box" id="w-slider">
+            <img src="workshop-1.jpg" alt="Teaching Java Arrays in Lab" class="active" />
+            <img src="workshop-2.jpg" alt="Presenting Java bytecode at Seminar Podium" />
+            <img src="workshop-3.jpg" alt="Explaining OOP code on Projector" />
+
+            <div class="workshop-dots-row">
+              <button class="workshop-dot active" onclick="setWorkshopSlide(0)" aria-label="Slide 1"></button>
+              <button class="workshop-dot" onclick="setWorkshopSlide(1)" aria-label="Slide 2"></button>
+              <button class="workshop-dot" onclick="setWorkshopSlide(2)" aria-label="Slide 3"></button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -3400,11 +3536,11 @@
           </div>
         </div>
 
-        <div class="gallery-card-item" onclick="openLightbox('workshop-2.jpg', 'Presenting from the MITS Seminar Podium', 'Delivering keynote introduction on Java compilers and bytecode systems.')">
-          <img src="workshop-2.jpg" alt="MITS Seminar Presentation" />
+        <div class="gallery-card-item" onclick="openLightbox('seminar-presentation.jpg', 'Technical Presentation at College Seminar Hall', 'Delivered a technical presentation and knowledge-sharing session for visiting Polytechnic students at the college seminar hall, promoting technical awareness and interactive learning.')">
+          <img src="seminar-presentation.jpg" alt="Technical Presentation at MITS Seminar Hall" />
           <div class="gallery-card-overlay">
-            <span class="gallery-overlay-title">Seminar Keynote</span>
-            <span class="gallery-overlay-desc">Bytecode & JVM Introduction</span>
+            <span class="gallery-overlay-title">Seminar Presentation</span>
+            <span class="gallery-overlay-desc">Visiting Polytechnic Students</span>
           </div>
         </div>
       </div>
@@ -3545,7 +3681,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#education">Education</a></li>
-          <li><a href="#workshops">Workshop</a></li>
+          <li><a href="#workshops">Engagements</a></li>
           <li><a href="#coding-stats">Stats</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
