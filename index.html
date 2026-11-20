@@ -1796,6 +1796,100 @@
       border-radius: 8px;
     }
 
+    /* Appreciation Letter Callout Card in Workshop */
+    .appreciation-callout {
+      margin: 18px 0;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(217, 119, 6, 0.04) 100%);
+      border: 1.5px solid rgba(245, 158, 11, 0.35);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .appreciation-callout:hover {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.14) 0%, rgba(217, 119, 6, 0.08) 100%);
+      border-color: var(--amber);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(217, 119, 6, 0.12);
+    }
+
+    .appreciation-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(245, 158, 11, 0.18);
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .appreciation-details {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .appreciation-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #b45309;
+      margin-bottom: 2px;
+    }
+
+    .appreciation-heading {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0 0 4px 0;
+    }
+
+    .appreciation-summary {
+      font-size: 0.83rem;
+      color: var(--text-body);
+      margin: 0;
+      line-height: 1.45;
+    }
+
+    .appreciation-preview-btn {
+      flex-shrink: 0;
+      background: #ffffff;
+      color: #b45309;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      padding: 7px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .appreciation-callout:hover .appreciation-preview-btn {
+      background: var(--amber);
+      color: #ffffff;
+      border-color: var(--amber);
+    }
+
+    @media (max-width: 600px) {
+      .appreciation-callout {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .appreciation-preview-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
     /* ================= CODING STATS ================= */
     .coding-grid {
       display: grid;
@@ -3376,7 +3470,11 @@
         <div class="workshop-card-clean">
           <div class="workshop-content">
             <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
-              <span class="badge badge-primary">Technical Instructor</span>
+              <span class="badge badge-amber" style="display: inline-flex; align-items: center; gap: 5px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                Letter of Appreciation
+              </span>
+              <span class="badge badge-primary">Student Resource Person</span>
               <span class="badge badge-success">MITS Computer Lab</span>
               <span class="badge badge-indigo">10-Week Cohort</span>
             </div>
@@ -3386,10 +3484,33 @@
               Madanapalle Institute of Technology and Science (MITS) &bull; Department of CSE
             </div>
             <p class="workshop-desc">
-              Organized and conducted an intensive 10-week technical training workshop on Core Java and Object-Oriented Programming (OOPs) for university cohorts, covering language fundamentals, memory models, and practical coding exercises in the MITS computer lab.
+              Organized and conducted an intensive 10-week technical training workshop on Core Java and Object-Oriented Programming (OOPs) for university cohorts as an officially appointed <strong>Student Resource Person</strong>. Honored with a formal <strong>Letter of Appreciation</strong> from the <strong>Head of the Department, Computer Science &amp; Engineering (MITS)</strong> on <strong>10/07/2026</strong> in recognition of technical expertise, dedicated practical demonstrations, and inspiring peer-to-peer programming excellence.
             </p>
 
+            <!-- Official Letter of Appreciation Callout -->
+            <div class="appreciation-callout" onclick="openLightbox('letter-of-appreciation.jpg', 'Official Letter of Appreciation — MITS Department of CSE', 'Awarded to Mr. Padam Venkata Vineeth Sai in recognition of his valuable contribution as Student Resource Person in successfully conducting a Java Programming Workshop of 10 Weeks duration. Date: 10/07/2026. Signed by Head of the Department, Computer Science &amp; Engineering, Madanapalle Institute of Technology &amp; Science.')" title="Click to view full Letter of Appreciation">
+              <div class="appreciation-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              </div>
+              <div class="appreciation-details">
+                <span class="appreciation-badge">Department Honor &bull; 10/07/2026</span>
+                <h4 class="appreciation-heading">Letter of Appreciation from Head of CSE</h4>
+                <p class="appreciation-summary">Recognized as <strong>Student Resource Person</strong> by Head of the Department, CSE for technical leadership &amp; hands-on mentorship.</p>
+              </div>
+              <button class="appreciation-preview-btn" type="button">
+                View Letter &nearr;
+              </button>
+            </div>
+
             <div class="workshop-topics-grid">
+              <div class="workshop-topic-tag" style="background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3); color: #b45309;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                HOD Letter of Appreciation
+              </div>
+              <div class="workshop-topic-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                Role: Student Resource Person
+              </div>
               <div class="workshop-topic-tag">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
                 OOPs: Polymorphism &amp; Inheritance
@@ -3404,33 +3525,33 @@
               </div>
               <div class="workshop-topic-tag">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Exception Handling &amp; Debugging
-              </div>
-              <div class="workshop-topic-tag">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Arrays &amp; Heap vs Stack Memory
-              </div>
-              <div class="workshop-topic-tag">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                Junior CSE Cohort Mentored
+                Hands-on Lab Demonstrations
               </div>
             </div>
 
-            <a href="#gallery" class="btn btn-outline">
-              View Lab Photos
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <button class="btn btn-primary" onclick="openLightbox('letter-of-appreciation.jpg', 'Official Letter of Appreciation — MITS Department of CSE', 'Awarded to Mr. Padam Venkata Vineeth Sai in recognition of his valuable contribution as Student Resource Person in successfully conducting a Java Programming Workshop of 10 Weeks duration. Date: 10/07/2026. Signed by Head of the Department, Computer Science &amp; Engineering, Madanapalle Institute of Technology &amp; Science.')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                View Appreciation Letter
+              </button>
+              <a href="#gallery" class="btn btn-outline">
+                View Lab Photos
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
           </div>
 
           <div class="workshop-slider-box" id="w-slider">
             <img src="workshop-1.jpg" alt="Teaching Java Arrays in Lab" class="active" />
             <img src="workshop-2.jpg" alt="Presenting Java bytecode at Seminar Podium" />
             <img src="workshop-3.jpg" alt="Explaining OOP code on Projector" />
+            <img src="letter-of-appreciation.jpg" alt="Official Letter of Appreciation from Head of the Department, CSE" style="object-fit: contain; background: #ffffff; padding: 10px;" />
 
             <div class="workshop-dots-row">
               <button class="workshop-dot active" onclick="setWorkshopSlide(0)" aria-label="Slide 1"></button>
               <button class="workshop-dot" onclick="setWorkshopSlide(1)" aria-label="Slide 2"></button>
               <button class="workshop-dot" onclick="setWorkshopSlide(2)" aria-label="Slide 3"></button>
+              <button class="workshop-dot" onclick="setWorkshopSlide(3)" aria-label="Slide 4 - Appreciation Letter"></button>
             </div>
           </div>
         </div>
@@ -3543,7 +3664,15 @@
           </div>
         </div>
 
-        <div class="gallery-card-item" onclick="openLightbox('seminar-presentation.jpg', 'Technical Presentation at MITS College', 'Delivered a technical presentation and knowledge-sharing session for visiting Polytechnic students, conducted at MITS College, promoting technical awareness and interactive learning.')">
+                <div class="gallery-card-item" onclick="openLightbox('letter-of-appreciation.jpg', 'Official Letter of Appreciation — MITS Department of CSE', 'Awarded to Mr. Padam Venkata Vineeth Sai in recognition of his valuable contribution as Student Resource Person in successfully conducting a Java Programming Workshop of 10 Weeks duration. Date: 10/07/2026. Signed by Head of the Department, Computer Science &amp; Engineering, Madanapalle Institute of Technology &amp; Science.')">
+          <img src="letter-of-appreciation.jpg" alt="Official Letter of Appreciation from Head of CSE Department" style="object-fit: cover; object-position: top center;" />
+          <div class="gallery-card-overlay">
+            <span class="gallery-overlay-title">Letter of Appreciation</span>
+            <span class="gallery-overlay-desc">HOD CSE &bull; Student Resource Person</span>
+          </div>
+        </div>
+
+<div class="gallery-card-item" onclick="openLightbox('seminar-presentation.jpg', 'Technical Presentation at MITS College', 'Delivered a technical presentation and knowledge-sharing session for visiting Polytechnic students, conducted at MITS College, promoting technical awareness and interactive learning.')">
           <img src="seminar-presentation.jpg" alt="Technical Presentation Conducted at MITS College" />
           <div class="gallery-card-overlay">
             <span class="gallery-overlay-title">Seminar Presentation</span>
