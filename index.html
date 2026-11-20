@@ -751,7 +751,7 @@
 
     .certs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 28px;
     }
 
@@ -3263,10 +3263,10 @@
 
       <!-- Filter Bar -->
       <div class="cert-filter-bar">
-        <button class="cert-filter-btn active" onclick="filterCerts('all', this)">All Credentials (6)</button>
+        <button class="cert-filter-btn active" onclick="filterCerts('all', this)">All Credentials (3)</button>
         <button class="cert-filter-btn" onclick="filterCerts('ip', this)">Intellectual Property (1)</button>
         <button class="cert-filter-btn" onclick="filterCerts('corporate', this)">Corporate Program (1)</button>
-        <button class="cert-filter-btn" onclick="filterCerts('skills', this)">Academic & Skill Badges (4)</button>
+        <button class="cert-filter-btn" onclick="filterCerts('skills', this)">Academic &amp; Technical (1)</button>
       </div>
 
       <!-- Certificates Grid with Large Visible Previews -->
@@ -3353,75 +3353,6 @@
             <div class="cert-meta-row">
               <span>Year: <code class="cert-id-tag">2024 (Elite+Silver)</code></span>
               <button class="cert-view-btn" onclick="openLightbox('cert-nptel.png', 'Programming in Java — NPTEL IIT Kharagpur', 'Consolidated Score: 78% (Elite + Silver Honor).')">View Full &rarr;</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. HackerRank Java 5-Star -->
-        <div class="cert-card" data-category="skills">
-          <div class="cert-preview-frame" onclick="openLightbox('cert-hackerrank.png', 'Java Certificate — HackerRank 5-Star Rating', 'HackerRank 5-star gold rating in Core Java (2024). Validated proficiency in data structures, algorithms, and syntax.')">
-            <span class="badge badge-amber cert-badge-floating">5-Star Gold</span>
-            <img src="cert-hackerrank.png" alt="HackerRank Java Certificate Preview" />
-            <div class="cert-preview-overlay">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-              Click to View High-Res
-            </div>
-          </div>
-          <div class="cert-body">
-            <span class="cert-issuer">HackerRank Verification</span>
-            <h3 class="cert-title">Java (Basic) 5-Star Rating & Cert</h3>
-            <p class="cert-desc">
-              Demonstrated algorithmic mastery and core Java proficiency with a 5-star gold badge rating across competitive coding challenges.
-            </p>
-            <div class="cert-meta-row">
-              <span>ID: <code class="cert-id-tag">BCFD5E9C4E21</code></span>
-              <button class="cert-view-btn" onclick="openLightbox('cert-hackerrank.png', 'Java Certificate — HackerRank 5-Star Rating', 'HackerRank 5-star gold rating in Core Java (2024).')">View Full &rarr;</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. HackerRank SQL Intermediate -->
-        <div class="cert-card" data-category="skills">
-          <div class="cert-preview-frame" onclick="openLightbox('cert-sql-intermediate.png', 'SQL (Intermediate) Certificate — HackerRank', 'Earned on HackerRank. Verified credential in joins, complex aggregations, and subqueries. Cert ID: E663B67907C3.')">
-            <span class="badge badge-primary cert-badge-floating">Intermediate</span>
-            <img src="cert-sql-intermediate.png" alt="HackerRank SQL Intermediate Preview" />
-            <div class="cert-preview-overlay">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-              Click to View High-Res
-            </div>
-          </div>
-          <div class="cert-body">
-            <span class="cert-issuer">HackerRank Skills</span>
-            <h3 class="cert-title">SQL (Intermediate) Certificate</h3>
-            <p class="cert-desc">
-              Verified credential in advanced SQL operations: multi-table inner/outer joins, grouping rollups, subqueries, and window functions.
-            </p>
-            <div class="cert-meta-row">
-              <span>ID: <code class="cert-id-tag">E663B67907C3</code></span>
-              <button class="cert-view-btn" onclick="openLightbox('cert-sql-intermediate.png', 'SQL (Intermediate) Certificate — HackerRank', 'Cert ID: E663B67907C3.')">View Full &rarr;</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. HackerRank SQL Basic -->
-        <div class="cert-card" data-category="skills">
-          <div class="cert-preview-frame" onclick="openLightbox('cert-sql-basic.png', 'SQL (Basic) Certificate — HackerRank', 'Earned on HackerRank. Verified credential in relational database queries, filtering, and constraints. Cert ID: 52F00ECF839D.')">
-            <span class="badge badge-primary cert-badge-floating">Basic</span>
-            <img src="cert-sql-basic.png" alt="HackerRank SQL Basic Preview" />
-            <div class="cert-preview-overlay">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-              Click to View High-Res
-            </div>
-          </div>
-          <div class="cert-body">
-            <span class="cert-issuer">HackerRank Skills</span>
-            <h3 class="cert-title">SQL (Basic) Certificate</h3>
-            <p class="cert-desc">
-              Verified competency in fundamental relational database commands, filtering predicates, table unions, sorting, and aggregate functions.
-            </p>
-            <div class="cert-meta-row">
-              <span>ID: <code class="cert-id-tag">52F00ECF839D</code></span>
-              <button class="cert-view-btn" onclick="openLightbox('cert-sql-basic.png', 'SQL (Basic) Certificate — HackerRank', 'Cert ID: 52F00ECF839D.')">View Full &rarr;</button>
             </div>
           </div>
         </div>
